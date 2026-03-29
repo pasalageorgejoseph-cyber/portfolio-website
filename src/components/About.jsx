@@ -1,8 +1,25 @@
+import htmlLogo from '../../Pictures/HTML5_logo_and_wordmark.svg.png'
+import cssLogo from '../../Pictures/CSS-Logo-2011.png'
+import jsLogo from '../../Pictures/javascript.png'
+import reactLogo from '../../Pictures/React_Logo_SVG.svg.png'
+
 const skills = [
-  { name: 'HTML', level: 90 },
-  { name: 'CSS', level: 85 },
-  { name: 'JavaScript', level: 80 },
-  { name: 'React', level: 75 },
+  {
+    name: 'HTML',
+    icon: <img src={htmlLogo} alt="HTML logo" />,
+  },
+  {
+    name: 'CSS',
+    icon: <img src={cssLogo} alt="CSS logo" />,
+  },
+  {
+    name: 'JavaScript',
+    icon: <img src={jsLogo} alt="JavaScript logo" />,
+  },
+  {
+    name: 'React',
+    icon: <img src={reactLogo} alt="React logo" />,
+  },
 ]
 
 function About() {
@@ -21,13 +38,9 @@ function About() {
         </div>
         <div className="about-skills">
           {skills.map((skill) => (
-            <div key={skill.name} className="skill-item">
-              <div className="skill-label">
-                <span>{skill.name}</span>
-                <span>{skill.level}%</span>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-fill" style={{ width: `${skill.level}%` }} />
+            <div key={skill.name} className="skill-item" title={skill.name} aria-label={skill.name}>
+              <div className="skill-icon">
+                {skill.icon}
               </div>
             </div>
           ))}

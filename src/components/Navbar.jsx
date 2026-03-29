@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logoImage from '../../Pictures/Profile Pic.jpg'
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -14,7 +15,8 @@ function Navbar({ darkMode, setDarkMode }) {
     <header className="navbar">
       <div className="nav-inner">
         <a className="brand" href="#home">
-          Student Forge
+          <img src={logoImage} alt="Pasala George Joseph profile" />
+          Pasala George Joseph
         </a>
 
         <nav className={open ? 'nav-menu open' : 'nav-menu'}>
